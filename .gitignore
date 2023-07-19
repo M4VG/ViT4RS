@@ -1,0 +1,10 @@
+.venv/
+.venv_3.9/
+.venv310/
+datasets/
+__pycache__
+.vscode/
+wandb/
+models/weights/
+extra_resources/old_weights
+models/decoders/dcfam/pretrained_weights

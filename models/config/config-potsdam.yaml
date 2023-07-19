@@ -1,0 +1,42 @@
+# general config
+general:
+    trial: 60
+    do_train: yes
+    do_eval: yes
+
+model:
+    name: ft_unetformer_base
+    weight_init: zero
+
+dataset:
+    name: potsdam
+    input_channels: 3
+    crop: yes
+    patch_size: 512
+    stride: 384
+
+# wandb logging config
+logging:
+    log: yes
+    project: Potsdam-results
+
+# training hyperparameters
+train:
+    training_pre_processing: [normalizeImage]
+    validation_pre_processing: [normalizeImage]
+    batch_size: 4
+    accumulation_steps: 1
+    loss_function: cross_entropy
+    min_epochs: 50
+    patience: 0
+    learning_rate: 0.00006
+
+# evaluation hyperparameters
+eval:
+    pre_processing: [normalizeImage]
+    save_masks: no
+
+# directory paths
+dirs:
+    weights_dir: 'models/weights/'
+    out_masks_dir: 'extra_resources/output_masks/'

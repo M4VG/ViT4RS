@@ -1,0 +1,42 @@
+# general config
+general:
+    trial: 90
+    do_train: yes
+    do_eval: yes
+
+model:
+    name: dc_mit_b3
+    weight_init: zero
+
+dataset:
+    name: zurich_summer
+    input_channels: 3
+    crop: yes
+    patch_size: 128
+    stride: 96
+
+# wandb logging config
+logging:
+    log: yes
+    project: Zurich-Summer-results
+
+# training hyperparameters
+train:
+    training_pre_processing: [contrastEnhancement, normalizeImage, reduceMaskIndexes]
+    validation_pre_processing: [contrastEnhancement, normalizeImage, reduceMaskIndexes]
+    batch_size: 8
+    accumulation_steps: 1
+    loss_function: cross_entropy_mse
+    min_epochs: 50
+    patience: 0
+    learning_rate: 0.00006
+
+# evaluation hyperparameters
+eval:
+    pre_processing: [contrastEnhancement, normalizeImage, reduceMaskIndexes]
+    save_masks: no
+
+# directory paths
+dirs:
+    weights_dir: 'models/weights/'
+    out_masks_dir: 'extra_resources/output_masks/'
