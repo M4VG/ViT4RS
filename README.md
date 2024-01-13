@@ -6,7 +6,7 @@ The source code provided in this repository alows one to reproduce the results d
 
     @inproceedings{Goncalves2023,
        author = {Gonçalves, Miguel and Martins, Bruno and Estima, Jacinto},
-       booktitle = {Currently under review},
+       booktitle = {Proceedings of the 6th ACM SIGSPATIAL International Workshop on AI for Geographic Knowledge Discovery},
        title = {A Detailed Analysis on the Use of General-purpose Vision Transformers for Remote Sensing Image Segmentation},
        year = {2023}
     }
